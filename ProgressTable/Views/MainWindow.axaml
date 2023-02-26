@@ -57,7 +57,7 @@
 			<Border Grid.Row="0" Grid.Column="8"  BorderBrush="Black"  BorderThickness="1" />
 		</Grid>
 
-		<ListBox Grid.Row="1" Items="{Binding Students}" SelectedIndex="{Binding Index}">
+		<ListBox Grid.Row="1" Items="{Binding Students}" Margin="-8, 0, 0, 0" SelectedIndex="{Binding Index}">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<Grid RowDefinitions="Auto" ColumnDefinitions="3*, 2*, 2*, *, 2*, 1.2*, *, *, 1.4*">

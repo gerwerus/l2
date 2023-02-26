@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <Name>Тихонов Никита Алексеевич</Name>
+    <Visual>2</Visual>
+    <Architecture>1</Architecture>
+    <Networks>1</Networks>
+    <Calculate_Math>2</Calculate_Math>
+    <PI>2</PI>
+    <Math>1</Math>
+    <Electric>2</Electric>
+  </Student>
+  <Student>
+    <Name>Просянников Герман Евгеньевич</Name>
+    <Visual>2</Visual>
+    <Architecture>2</Architecture>
+    <Networks>2</Networks>
+    <Calculate_Math>2</Calculate_Math>
+    <PI>2</PI>
+    <Math>2</Math>
+    <Electric>2</Electric>
+  </Student>
+  <Student>
+    <Name>Дручинин Семён Сергеевич</Name>
+    <Visual>2</Visual>
+    <Architecture>2</Architecture>
+    <Networks>2</Networks>
+    <Calculate_Math>2</Calculate_Math>
+    <PI>2</PI>
+    <Math>2</Math>
+    <Electric>2</Electric>
+  </Student>
+</ArrayOfStudent>

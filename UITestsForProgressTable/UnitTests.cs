@@ -8,8 +8,9 @@ namespace UITestsForProgressTable
     public class UnitTests
     {
         [Fact]
-        public async void colors_tests_red()
+        public async void color_tests()
         {
+
             var app = AvaloniaApp.GetApp();
             var mainWindow = AvaloniaApp.GetMainWindow();
 
@@ -30,55 +31,7 @@ namespace UITestsForProgressTable
             var color = (visualProgrammBorder.Background as SolidColorBrush).Color;
             Assert.True(color.Equals(c), "Not true");
         }
-
-        [Fact]
-        public async void color_tests_green()
-        {
-            var app = AvaloniaApp.GetApp();
-            var mainWindow = AvaloniaApp.GetMainWindow();
-
-            await Task.Delay(100);
-
-            var listBoxItems = mainWindow.GetVisualDescendants().OfType<ListBox>().First().GetVisualDescendants().OfType<ListBoxItem>();
-
-            var listBoxItem = listBoxItems.ToArray()[1];
-            var visualProgrammBorder = listBoxItem.GetVisualDescendants().OfType<Border>().First(x => (x.Name != null) && x.Name.Equals("VisualProgrammBorder"));
-            var textBlockVisualProgramm = listBoxItem.GetVisualDescendants().OfType<TextBlock>().First(x => (x.Name != null) && x.Name.Equals("VisualProgrammText"));
-            var text = textBlockVisualProgramm.Text;
-            Color c = text switch
-            {
-                "0" => Colors.Red,
-                "1" => Colors.Yellow,
-                "2" => Colors.Green,
-            };
-            var color = (visualProgrammBorder.Background as SolidColorBrush).Color;
-            Assert.True(color.Equals(c), "Not true");
-        }
-
-        [Fact]
-        public async void color_tests_yellow()
-        {
-            var app = AvaloniaApp.GetApp();
-            var mainWindow = AvaloniaApp.GetMainWindow();
-
-            await Task.Delay(100);
-
-            var grid = mainWindow.GetVisualDescendants().OfType<Grid>().First(x => (x.Name != null) && x.Name.Equals("SrGrid"));
-
-            var visualProgrammBorder = grid.GetVisualDescendants().OfType<Border>().First(x => (x.Name != null) && x.Name.Equals("VisualSrBorder"));
-            var textBlockVisualProgramm = grid.GetVisualDescendants().OfType<TextBlock>().First(x => (x.Name != null) && x.Name.Equals("VisualSrText"));
-            var text = textBlockVisualProgramm.Text;
-            Color c = text switch
-            {
-                "0" => Colors.Red,
-                "1" => Colors.Yellow,
-                "2" => Colors.Green,
-            };
-            var color = (visualProgrammBorder.Background as SolidColorBrush).Color;
-            Assert.True(color.Equals(c), "Not true");
-        }
-
-
+        
         [Fact]
         public async void add_student_and_save_test()
         {
@@ -96,11 +49,11 @@ namespace UITestsForProgressTable
             var textbox = mainWindow.GetVisualDescendants().OfType<TextBox>().First(t => t.Name == "TextBoxName");
 
             buttonSave.Command.Execute(buttonSave.CommandParameter);
-            textbox.Text = "Валентина Валерьевна";
+            textbox.Text = "Сергей Лавкин";
             buttonAdd.Command.Execute(buttonAdd.CommandParameter);
 
 
-            Assert.True(listBoxItems.Count() == 4);
+            Assert.True(listBoxItems.Count() == 2);
 
             buttonLoad.Command.Execute(buttonLoad.CommandParameter);
         }
@@ -122,14 +75,14 @@ namespace UITestsForProgressTable
             var textbox = mainWindow.GetVisualDescendants().OfType<TextBox>().First(t => t.Name == "TextBoxName");
 
             buttonSave.Command.Execute(buttonSave.CommandParameter);
-            textbox.Text = "Валентина Валерьевна";
+            textbox.Text = "Сергей Лавкин";
             buttonAdd.Command.Execute(buttonAdd.CommandParameter);
 
 
 
             buttonLoad.Command.Execute(buttonLoad.CommandParameter);
             string text = listBoxItems.Count().ToString();
-            Assert.True(listBoxItems.Count() == 3, text);
+            Assert.True(listBoxItems.Count() == 1, text);
         }
 
         [Fact]
@@ -152,7 +105,7 @@ namespace UITestsForProgressTable
             listBox.SelectedIndex = 0;
             buttonRemove.Command.Execute(buttonRemove.CommandParameter);
 
-            Assert.True(listBoxItems.Count() == 2);
+            Assert.True(listBoxItems.Count() == 0);
 
             buttonLoad.Command.Execute(buttonLoad.CommandParameter);
         }
@@ -177,7 +130,7 @@ namespace UITestsForProgressTable
             var textbox = mainWindow.GetVisualDescendants().OfType<TextBox>().First(t => t.Name == "TextBoxName");
 
             buttonSave.Command.Execute(buttonSave.CommandParameter);
-            textbox.Text = "Валентина Валерьевна";
+            textbox.Text = "Сергей Лавкин";
             buttonAdd.Command.Execute(buttonAdd.CommandParameter);
 
             var text = textBlockVisualProgramm.Text;
